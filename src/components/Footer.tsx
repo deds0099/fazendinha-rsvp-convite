@@ -11,13 +11,7 @@ const Footer = () => {
           <Sparkles className="w-6 h-6 text-primary" />
         </div>
         
-        <p className="text-lg font-medium text-muted-foreground mb-2">
-          Feito com muito carinho para a fazendinha do José Emídio
-        </p>
-        
-        <div className="text-4xl mb-4">
-          🐄 🌾 🎪 🌻 🎵
-        </div>
+
         
         <p className="text-sm text-muted-foreground">
           Nos vemos em 26 de julho de 2025 - Será uma festa inesquecível!
