@@ -1,0 +1,139 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 48 96% 89%;
+    --foreground: 25 95% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 95% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 95% 15%;
+
+    --primary: 35 91% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 48 30% 85%;
+    --muted-foreground: 25 50% 40%;
+
+    --accent: 15 86% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 50% 80%;
+    --input: 35 50% 80%;
+    --ring: 35 91% 55%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 95% 15%;
+    --foreground: 48 96% 89%;
+
+    --card: 25 95% 15%;
+    --card-foreground: 48 96% 89%;
+
+    --popover: 25 95% 15%;
+    --popover-foreground: 48 96% 89%;
+
+    --primary: 35 91% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 25 50% 25%;
+    --muted-foreground: 48 30% 65%;
+
+    --accent: 15 86% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 50% 25%;
+    --input: 25 50% 25%;
+    --ring: 35 91% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    background-image: url('/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .festa-gradient {
+    background: 
+      /* Mini animais para o header */
+      url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Ccircle cx='20' cy='20' r='6' fill='%23ffffff' opacity='0.8'/%3E%3Ccircle cx='18' cy='18' r='1' fill='%23000'/%3E%3Ccircle cx='22' cy='18' r='1' fill='%23000'/%3E%3Cpath d='M19 22c0.5 0.5 1.5 0.5 2 0' stroke='%23000' stroke-width='0.8'/%3E%3C/g%3E%3C/svg%3E"),
+      linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    background-size: 40px 40px, 100% 100%;
+  }
+  
+  .fazenda-pattern {
+    background-image: 
+      /* Padrão de fazenda mais denso */
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Ccircle cx='15' cy='15' r='4' fill='%23ffffff' opacity='0.6'/%3E%3Ccircle cx='45' cy='15' r='3' fill='%23ffb3d9' opacity='0.6'/%3E%3Ccircle cx='15' cy='45' r='3' fill='%23ffffcc' opacity='0.6'/%3E%3Ccircle cx='45' cy='45' r='4' fill='%23f0f0f0' opacity='0.6'/%3E%3Cpath d='M30 5v50M5 30h50' stroke='%2334d399' stroke-width='1' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E"),
+      radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--secondary) / 0.1) 0%, transparent 50%);
+    background-size: 60px 60px, 200px 200px, 150px 150px;
+  }
+
+  .farm-wallpaper {
+    position: relative;
+    background-image: 
+      /* Fazenda completa infantil */
+      url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3C!-- Vaca grande --%3E%3Cellipse cx='30' cy='30' rx='12' ry='10' fill='%23ffffff' stroke='%23000' stroke-width='2'/%3E%3Ccircle cx='26' cy='26' r='2' fill='%23000'/%3E%3Ccircle cx='34' cy='26' r='2' fill='%23000'/%3E%3Cellipse cx='30' cy='32' rx='4' ry='3' fill='%23ffb3ba'/%3E%3Cpath d='M27 34c2 1 4 1 6 0' stroke='%23000' stroke-width='1'/%3E%3Cpath d='M22 20c-2-2 0-4 2-2' fill='%23000'/%3E%3Cpath d='M36 20c2-2 4 0 2 2' fill='%23000'/%3E%3C!-- Porco --%3E%3Ccircle cx='80' cy='25' r='8' fill='%23ffb3d9' stroke='%23000' stroke-width='1.5'/%3E%3Ccircle cx='77' cy='22' r='1.5' fill='%23000'/%3E%3Ccircle cx='83' cy='22' r='1.5' fill='%23000'/%3E%3Ccircle cx='80' cy='26' r='1.5' fill='%23ff69b4'/%3E%3Cpath d='M78 28c1 0.5 3 0.5 4 0' stroke='%23000' stroke-width='1'/%3E%3C!-- Galinha --%3E%3Cellipse cx='25' cy='80' rx='6' ry='8' fill='%23ffffcc' stroke='%23000' stroke-width='1.5'/%3E%3Ccircle cx='25' cy='75' r='4' fill='%23ffffcc' stroke='%23000' stroke-width='1.5'/%3E%3Ccircle cx='23' cy='73' r='1' fill='%23000'/%3E%3Cpath d='M27 74l3-1v2l-3-1z' fill='%23ffa500'/%3E%3Cpath d='M22 70c-2-2 0-4 2-2' fill='%23ff0000'/%3E%3C!-- Ovelha --%3E%3Cellipse cx='85' cy='85' rx='10' ry='8' fill='%23f0f0f0' stroke='%23000' stroke-width='1.5'/%3E%3Ccircle cx='88' cy='82' r='4' fill='%23ffe4e1' stroke='%23000' stroke-width='1'/%3E%3Ccircle cx='86' cy='80' r='1' fill='%23000'/%3E%3Ccircle cx='90' cy='80' r='1' fill='%23000'/%3E%3C!-- Flores --%3E%3Ccircle cx='60' cy='60' r='3' fill='%23ff69b4'/%3E%3Ccircle cx='58' cy='58' r='2' fill='%23ff69b4'/%3E%3Ccircle cx='62' cy='58' r='2' fill='%23ff69b4'/%3E%3Ccircle cx='58' cy='62' r='2' fill='%23ff69b4'/%3E%3Ccircle cx='62' cy='62' r='2' fill='%23ff69b4'/%3E%3Ccircle cx='60' cy='60' r='2' fill='%23ffff00'/%3E%3C!-- Sol --%3E%3Ccircle cx='100' cy='20' r='8' fill='%23ffff00' stroke='%23ffa500' stroke-width='2'/%3E%3Cpath d='M100 5v6M115 20h-6M100 35v-6M85 20h6M108 12l-4 4M108 28l-4-4M92 28l4-4M92 12l4 4' stroke='%23ffa500' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E"),
+      linear-gradient(45deg, 
+        hsla(120, 60%, 90%, 0.9) 0%,
+        hsla(60, 100%, 90%, 0.9) 25%,
+        hsla(200, 60%, 90%, 0.9) 50%,
+        hsla(300, 60%, 90%, 0.9) 75%,
+        hsla(120, 60%, 90%, 0.9) 100%
+      );
+    background-size: 120px 120px, 100% 100%;
+  }
+}
