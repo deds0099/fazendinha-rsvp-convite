@@ -5,12 +5,25 @@ const ConviteHeader = () => {
   return (
     <section className="min-h-screen flex items-center justify-center p-4 relative">
       {/* Vídeo de fundo */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         <iframe
-          src="https://iframe.mediadelivery.net/play/466050/5b0676c2-2b3e-455c-b1da-09de49e00b98"
-          className="w-full h-full"
-          style={{ border: 'none' }}
+          src="https://iframe.mediadelivery.net/play/466050/5b0676c2-2b3e-455c-b1da-09de49e00b98?autoplay=1&loop=1&muted=1"
+          className="w-full h-full object-cover"
+          style={{ 
+            border: 'none', 
+            pointerEvents: 'none',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '100vw',
+            height: '100vh',
+            minWidth: '100%',
+            minHeight: '100%'
+          }}
           allow="autoplay; fullscreen"
+          frameBorder="0"
+          scrolling="no"
         />
       </div>
       
