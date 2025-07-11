@@ -3,18 +3,19 @@ import { Calendar, Clock, MapPin } from 'lucide-react';
 
 const ConviteHeader = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center p-4">
-      {/* Vídeo de fundo do Google Drive */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center p-4 relative">
+      {/* Vídeo de fundo */}
+      <div className="absolute inset-0 w-full h-full">
         <iframe
-          src="https://drive.google.com/file/d/1vAkEZfheLptSErnU0NIVDM_bV0sTC2xq/preview?autoplay=1&loop=1&muted=1"
+          src="https://iframe.mediadelivery.net/play/466050/5b0676c2-2b3e-455c-b1da-09de49e00b98"
           className="w-full h-full"
-          style={{ border: 'none', zIndex: -1 }}
-          allow="autoplay"
+          style={{ border: 'none' }}
+          allow="autoplay; fullscreen"
         />
-        {/* Overlay escuro para melhorar legibilidade */}
-        <div className="absolute inset-0 bg-black/40"></div>
       </div>
+      
+      {/* Overlay escuro */}
+      <div className="absolute inset-0 bg-black/40"></div>
       
       <div className="text-center max-w-4xl mx-auto relative z-10">
         <div className="mb-8 animate-bounce">
