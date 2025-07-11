@@ -97,10 +97,10 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
     background-image: url('/fundo.png');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -108,9 +108,9 @@ All colors MUST be HSL.
   /* Mobile optimizations */
   @media (max-width: 768px) {
     body {
-      background-attachment: scroll;
-      background-size: cover;
-      background-position: center top;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     
     #root {
