@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { UserCheck, Users, Send, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { saveToGoogleSheets } from '@/lib/googleSheets';
 
 const FormularioRSVP = () => {
   const [formData, setFormData] = useState({
@@ -39,18 +40,29 @@ const FormularioRSVP = () => {
 
     setEnviando(true);
     
-    // Simula envio do formulário
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    console.log('Confirmação de presença:', formData);
-    
-    setEnviado(true);
-    setEnviando(false);
-    
-    toast({
-      title: "Presença confirmada! 🎉",
-      description: `Obrigado, ${formData.nome}! Esperamos você na fazendinha do José Emídio.`,
-    });
+    try {
+      // Salva na planilha do Google
+      const result = await saveToGoogleSheets(formData);
+      
+      if (result.success) {
+        setEnviado(true);
+        toast({
+          title: "Presença confirmada! 🎉",
+          description: `Obrigado, ${formData.nome}! Esperamos você na fazendinha do José Emídio.`,
+        });
+      } else {
+        throw new Error('Erro ao salvar na planilha');
+      }
+    } catch (error) {
+      console.error('Erro:', error);
+      toast({
+        title: "Erro ao confirmar",
+        description: "Houve um problema ao salvar sua confirmação. Tente novamente.",
+        variant: "destructive"
+      });
+    } finally {
+      setEnviando(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
