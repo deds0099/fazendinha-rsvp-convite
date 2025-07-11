@@ -3,17 +3,29 @@ import { Calendar, Clock, MapPin } from 'lucide-react';
 
 const ConviteHeader = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-green-100 via-yellow-100 to-orange-100">
-      <div className="text-center max-w-4xl mx-auto">
+    <section className="min-h-screen flex items-center justify-center p-4">
+      {/* Vídeo de fundo do Google Drive */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <iframe
+          src="https://drive.google.com/file/d/1vAkEZfheLptSErnU0NIVDM_bV0sTC2xq/preview?autoplay=1&loop=1&muted=1"
+          className="w-full h-full"
+          style={{ border: 'none', zIndex: -1 }}
+          allow="autoplay"
+        />
+        {/* Overlay escuro para melhorar legibilidade */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+      
+      <div className="text-center max-w-4xl mx-auto relative z-10">
         <div className="mb-8 animate-bounce">
           <h1 className="text-6xl md:text-8xl font-bold mb-4">🎉</h1>
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg text-gray-800">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg text-white">
           Você está convidado para
         </h1>
         
-        <h2 className="text-5xl md:text-7xl font-black mb-8 drop-shadow-lg text-orange-600">
+        <h2 className="text-5xl md:text-7xl font-black mb-8 drop-shadow-lg text-yellow-200">
           A fazendinha do José Emídio!
         </h2>
         
