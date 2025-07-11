@@ -96,11 +96,57 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
-    background-image: url('/fundo.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 25%, #F0E68C 50%, #FFB6C1 75%, #DDA0DD 100%);
+    position: relative;
     min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      /* Cow */
+      radial-gradient(circle at 20% 30%, #8B4513 0%, #8B4513 8%, transparent 8.5%),
+      radial-gradient(circle at 25% 35%, #8B4513 0%, #8B4513 6%, transparent 6.5%),
+      radial-gradient(circle at 30% 40%, #8B4513 0%, #8B4513 4%, transparent 4.5%),
+      /* Horse */
+      radial-gradient(circle at 70% 25%, #8B4513 0%, #8B4513 7%, transparent 7.5%),
+      radial-gradient(circle at 75% 30%, #8B4513 0%, #8B4513 5%, transparent 5.5%),
+      radial-gradient(circle at 80% 35%, #8B4513 0%, #8B4513 3%, transparent 3.5%),
+      /* Chicken */
+      radial-gradient(circle at 15% 70%, #FFD700 0%, #FFD700 5%, transparent 5.5%),
+      radial-gradient(circle at 20% 75%, #FFD700 0%, #FFD700 3%, transparent 3.5%),
+      /* Pig */
+      radial-gradient(circle at 80% 75%, #FFB6C1 0%, #FFB6C1 6%, transparent 6.5%),
+      radial-gradient(circle at 85% 80%, #FFB6C1 0%, #FFB6C1 4%, transparent 4.5%),
+      /* Sheep */
+      radial-gradient(circle at 50% 60%, #F5F5DC 0%, #F5F5DC 8%, transparent 8.5%),
+      radial-gradient(circle at 55% 65%, #F5F5DC 0%, #F5F5DC 6%, transparent 6.5%),
+      /* Flowers */
+      radial-gradient(circle at 10% 20%, #FF69B4 0%, #FF69B4 2%, transparent 2.5%),
+      radial-gradient(circle at 90% 15%, #FF69B4 0%, #FF69B4 2%, transparent 2.5%),
+      radial-gradient(circle at 5% 80%, #FF69B4 0%, #FF69B4 2%, transparent 2.5%),
+      radial-gradient(circle at 95% 85%, #FF69B4 0%, #FF69B4 2%, transparent 2.5%),
+      /* Sun */
+      radial-gradient(circle at 85% 10%, #FFD700 0%, #FFD700 8%, transparent 8.5%),
+      /* Grass patches */
+      radial-gradient(ellipse at 30% 90%, #228B22 0%, #228B22 15%, transparent 15.5%),
+      radial-gradient(ellipse at 70% 95%, #228B22 0%, #228B22 12%, transparent 12.5%);
+    pointer-events: none;
+    z-index: -1;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(1deg); }
+    50% { transform: translateY(-5px) rotate(-1deg); }
+    75% { transform: translateY(-15px) rotate(0.5deg); }
   }
 }
 
