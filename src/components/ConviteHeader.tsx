@@ -1,5 +1,5 @@
 
-import { Calendar, Clock, MapPin, Users, Utensils, Music } from 'lucide-react';
+import { Calendar, Clock, MapPin } from 'lucide-react';
 
 const ConviteHeader = () => {
   return (
@@ -45,13 +45,8 @@ const ConviteHeader = () => {
           </div>
           
           <div className="mt-8 p-6 bg-gray-50 rounded-2xl">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <Utensils className="w-6 h-6 text-orange-500" />
-              <Music className="w-6 h-6 text-orange-500" />
-              <Users className="w-6 h-6 text-orange-500" />
-            </div>
-            <p className="text-xl font-semibold text-center text-gray-800">
-              Vai ter muita comida boa, música e alegria!
+            <p className="text-lg font-semibold text-center text-gray-800 leading-relaxed">
+              Prepare-se pra uma tarde na minha fazendinha, cheio de magia e encanto, entre animais, alegria e muita diversão, sua presença tornará tudo ainda mais especial! Venha comemorar meu primeiro aninho.
             </p>
           </div>
           
