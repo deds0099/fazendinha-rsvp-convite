@@ -3,13 +3,30 @@ import { Calendar, Clock, MapPin } from 'lucide-react';
 
 const ConviteHeader = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center p-4 festa-gradient">
-      <div className="text-center max-w-4xl mx-auto">
+    <section className="min-h-screen flex flex-col items-center justify-center p-4">
+      {/* Vídeo de fundo */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          style={{ zIndex: -1 }}
+        >
+          <source src="https://drive.google.com/uc?export=download&id=1vAkEZfheLptSErnU0NIVDM_bV0sTC2xq" type="video/mp4" />
+          Seu navegador não suporta vídeos.
+        </video>
+        {/* Overlay escuro para melhorar legibilidade do texto */}
+        <div className="absolute inset-0 bg-black/30"></div>
+      </div>
+      
+      <div className="text-center max-w-4xl mx-auto relative z-10">
         <div className="mb-8 animate-bounce">
           <h1 className="text-6xl md:text-8xl font-bold mb-4">🎉</h1>
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg text-white">
           Você está convidado para
         </h1>
         
